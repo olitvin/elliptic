@@ -1,0 +1,17 @@
+{
+  "name": "elliptic",
+  "homepage": "https://github.com/olitvin/elliptic",
+  "_release": "9a55067693",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "9a55067693845557659b820f0b08d0cf2cbd89d7"
+  },
+  "_source": "https://github.com/olitvin/elliptic.git",
+  "_target": "*",
+  "_originalSource": "olitvin/elliptic",
+  "_direct": true,
+  "dependencies": {
+    "elliptic": "indutny/elliptic#^6.4.0"
+  }
+}
