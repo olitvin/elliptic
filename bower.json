@@ -1,25 +1,23 @@
 {
-  "name": "angular-elliptic",
-  "homepage": "https://github.com/olitvin/elliptic",
-  "version": "0.0.1",
-  "authors": [
-    "Oleg Litvin <olitvin@zuzex.com>"
-  ],
-  "_source": "git://github.com/olitvin/elliptic.git",
-  "_target": "*",
-  "_originalSource": "olitvin/elliptic",
-  "_direct": true,
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "elliptic": "indutny/elliptic#^6.4.0"
-  },
-  "description": "module for use elliptic library",
-  "main": "angular-elliptic.js"
+    "name": "angular-elliptic",
+    "version": "0.0.1",
+    "authors": [
+        "Oleg Litvin <olitvin@zuzex.com>"
+    ],
+    "main": "angular-elliptic.js",
+    "moduleType": [
+        "amd"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "elliptic": "indutny/elliptic#^6.4.0"
+    },
+    "description": "module for use elliptic library"
 }
