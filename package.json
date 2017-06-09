@@ -33,6 +33,6 @@
   "dependencies": {
     "karma-chrome-launcher": "^0.1.5",
     "assert": "^1.1.2",
-    "elliptic": "indutny/elliptic#^6.4.0"
+    "elliptic": "indutny/elliptic"
   }
 }
