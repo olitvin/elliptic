@@ -1,1 +1,1 @@
-angular.module('elliptic', ['olitvin.elliptic']);
+angular.module('angular-elliptic', ['olitvin.elliptic']);

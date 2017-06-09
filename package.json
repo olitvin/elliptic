@@ -1,9 +1,9 @@
 {
-  "name": "elliptic",
+  "name": "angular-elliptic",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "http://github.com/olitvin/elliptic.git"
+    "url": "git://github.com/olitvin/elliptic.git"
   },
   "author": [{
     "name": "Oleg Litvin",

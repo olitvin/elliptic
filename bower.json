@@ -1,12 +1,11 @@
 {
-  "name": "elliptic",
+  "name": "angular-elliptic",
   "homepage": "https://github.com/olitvin/elliptic",
-  "_release": "9a55067693",
   "version": "0.0.1",
   "authors": [
     "Oleg Litvin <olitvin@zuzex.com>"
   ],
-  "_source": "https://github.com/olitvin/elliptic.git",
+  "_source": "git://github.com/olitvin/elliptic.git",
   "_target": "*",
   "_originalSource": "olitvin/elliptic",
   "_direct": true,
@@ -20,5 +19,8 @@
   ],
   "dependencies": {
     "elliptic": "indutny/elliptic#^6.4.0"
-  }
+  },
+  "description": "module for use elliptic library",
+  "main": "angular-elliptic.js",
+  "private": true
 }

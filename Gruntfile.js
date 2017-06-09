@@ -39,7 +39,7 @@ module.exports = function(grunt) {
         src: ['src/*.js','src/**/*.js'],
         dest: 'build/app.js',
         options: {
-          external: ['elliptic'],
+          external: ['angular-elliptic'],
           watch: true
         }
       }
