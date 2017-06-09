@@ -21,6 +21,5 @@
     "elliptic": "indutny/elliptic#^6.4.0"
   },
   "description": "module for use elliptic library",
-  "main": "angular-elliptic.js",
-  "private": false
+  "main": "angular-elliptic.js"
 }
