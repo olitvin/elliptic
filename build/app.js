@@ -21073,10 +21073,9 @@ angular.module('olitvin.crypto', [])
             newKey: function (keyHex)
             {
                 var key = Crypto.createECDH('prime256v1');
+                key.generateKeys('hex');
                 if (keyHex) {
                     key.setPrivateKey(Buffer(keyHex, 'hex'));
-                } else {
-                    key.generateKeys('hex');
                 }
                 return key;
             }
