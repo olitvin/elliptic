@@ -15278,7 +15278,7 @@
                         },
                         getPublic: function(privKey) {
                             var key = Crypto.createECDH("prime256v1");
-                            key.setPrivateKey(Buffer(keyHex, "hex"));
+                            key.setPrivateKey(Buffer(privKey, "hex"));
                             return key.getPublicKey("base64", "compressed");
                         }
                     });
