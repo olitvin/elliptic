@@ -6,7 +6,7 @@ angular.module('olitvin.crypto', [])
         return angular.extend(Crypto, {
             newKey: function (keyHex)
             {
-                key = Crypto.createECDH('prime256v1');
+                var key = Crypto.createECDH('prime256v1');
                 if (keyHex) {
                     key.setPrivateKey(Buffer(keyHex, 'hex'));
                 } else {
