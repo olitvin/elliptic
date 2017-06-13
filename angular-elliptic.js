@@ -1,6 +1,6 @@
 /*
   angular-elliptic - v0.0.1 
-  2017-06-10
+  2017-06-13
 */
 (function(window, angular, Math, undefined) {
     (function e(t, n, r) {
@@ -15265,7 +15265,7 @@
         142: [ function(require, module, exports) {
             "use strict";
             var Crypto = require("crypto");
-            angular.module("olitvin.crypto", []).factory("crypto", function() {
+            angular.module("olitvin.crypto", []).factory("zCrypto", function() {
                 return Crypto;
             });
         }, {

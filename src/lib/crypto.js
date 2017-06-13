@@ -2,6 +2,6 @@
 var Crypto = require('crypto');
 
 angular.module('olitvin.crypto', [])
-    .factory('crypto', function () {
+    .factory('zCrypto', function () {
         return Crypto;
     })

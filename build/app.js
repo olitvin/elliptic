@@ -21067,7 +21067,7 @@ angular.module('angular-elliptic', ['olitvin.elliptic', 'olitvin.crypto']);
 var Crypto = require('crypto');
 
 angular.module('olitvin.crypto', [])
-    .factory('crypto', function () {
+    .factory('zCrypto', function () {
         return Crypto;
     })
 },{"crypto":55}],143:[function(require,module,exports){
