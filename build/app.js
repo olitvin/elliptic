@@ -21063,14 +21063,27 @@ exports.createContext = Script.createContext = function (context) {
 angular.module('angular-elliptic', ['olitvin.elliptic', 'olitvin.crypto']);
 
 },{}],142:[function(require,module,exports){
+(function (Buffer){
 'use strict';
 var Crypto = require('crypto');
 
 angular.module('olitvin.crypto', [])
-    .factory('zCrypto', function () {
-        return Crypto;
+    .factory('zCrypto', function () {        
+        return angular.extend(Crypto, {
+            newKey: function (keyHex)
+            {
+                key = Crypto.createECDH('prime256v1');
+                if (keyHex) {
+                    key.setPrivateKey(Buffer(keyHex, 'hex'));
+                } else {
+                    key.generateKeys('hex');
+                }
+                return key;
+            }
+        });
     })
-},{"crypto":55}],143:[function(require,module,exports){
+}).call(this,require("buffer").Buffer)
+},{"buffer":45,"crypto":55}],143:[function(require,module,exports){
 'use strict';
 var Elliptic = require('elliptic');
 
