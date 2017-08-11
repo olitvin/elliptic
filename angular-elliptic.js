@@ -1,6 +1,6 @@
 /*
   angular-elliptic - v0.0.1 
-  2017-06-13
+  2017-08-11
 */
 (function(window, angular, Math, undefined) {
     (function e(t, n, r) {
@@ -89,8 +89,8 @@
             };
         }, {
             "../asn1": 1,
-            inherits: 94,
-            vm: 140
+            inherits: 101,
+            vm: 147
         } ],
         3: [ function(require, module, exports) {
             var inherits = require("inherits");
@@ -181,7 +181,7 @@
         }, {
             "../base": 4,
             buffer: 45,
-            inherits: 94
+            inherits: 101
         } ],
         4: [ function(require, module, exports) {
             var base = exports;
@@ -561,7 +561,7 @@
             };
         }, {
             "../base": 4,
-            "minimalistic-assert": 98
+            "minimalistic-assert": 105
         } ],
         6: [ function(require, module, exports) {
             var inherits = require("inherits");
@@ -657,7 +657,7 @@
                 return this;
             };
         }, {
-            inherits: 94
+            inherits: 101
         } ],
         7: [ function(require, module, exports) {
             var constants = require("../constants");
@@ -933,7 +933,7 @@
             }
         }, {
             "../../asn1": 1,
-            inherits: 94
+            inherits: 101
         } ],
         10: [ function(require, module, exports) {
             var decoders = exports;
@@ -981,7 +981,7 @@
         }, {
             "./der": 9,
             buffer: 45,
-            inherits: 94
+            inherits: 101
         } ],
         12: [ function(require, module, exports) {
             var inherits = require("inherits");
@@ -1162,7 +1162,7 @@
         }, {
             "../../asn1": 1,
             buffer: 45,
-            inherits: 94
+            inherits: 101
         } ],
         13: [ function(require, module, exports) {
             var encoders = exports;
@@ -1191,7 +1191,7 @@
             };
         }, {
             "./der": 12,
-            inherits: 94
+            inherits: 101
         } ],
         15: [ function(require, module, exports) {
             var lookup = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
@@ -1315,7 +1315,7 @@
                 BN.wordSize = 26;
                 var Buffer;
                 try {
-                    Buffer = require("buf" + "fer").Buffer;
+                    Buffer = require("buffer").Buffer;
                 } catch (e) {}
                 BN.isBN = function isBN(num) {
                     if (num instanceof BN) {
@@ -3816,7 +3816,7 @@
                     }
                 };
                 Red.prototype.pow = function pow(a, num) {
-                    if (num.isZero()) return new BN(1);
+                    if (num.isZero()) return new BN(1).toRed(this);
                     if (num.cmpn(1) === 0) return a.clone();
                     var windowSize = 4;
                     var wnd = new Array(1 << windowSize);
@@ -3924,7 +3924,9 @@
                     return res._forceRed(this);
                 };
             })(typeof module === "undefined" || module, this);
-        }, {} ],
+        }, {
+            buffer: 18
+        } ],
         17: [ function(require, module, exports) {
             var r;
             module.exports = function rand(len) {
@@ -4240,7 +4242,7 @@
             buffer: 45,
             "buffer-xor": 44,
             "cipher-base": 47,
-            inherits: 94
+            inherits: 101
         } ],
         21: [ function(require, module, exports) {
             var ciphers = require("./encrypter");
@@ -4409,7 +4411,7 @@
             buffer: 45,
             "cipher-base": 47,
             evp_bytestokey: 83,
-            inherits: 94
+            inherits: 101
         } ],
         23: [ function(require, module, exports) {
             (function(Buffer) {
@@ -4546,7 +4548,7 @@
             buffer: 45,
             "cipher-base": 47,
             evp_bytestokey: 83,
-            inherits: 94
+            inherits: 101
         } ],
         24: [ function(require, module, exports) {
             (function(Buffer) {
@@ -5006,7 +5008,7 @@
             "./aes": 19,
             buffer: 45,
             "cipher-base": 47,
-            inherits: 94
+            inherits: 101
         } ],
         34: [ function(require, module, exports) {
             var ebtk = require("evp_bytestokey");
@@ -5137,7 +5139,7 @@
             buffer: 45,
             "cipher-base": 47,
             "des.js": 56,
-            inherits: 94
+            inherits: 101
         } ],
         36: [ function(require, module, exports) {
             exports["des-ecb"] = {
@@ -5210,7 +5212,7 @@
         }, {
             "bn.js": 16,
             buffer: 45,
-            randombytes: 117
+            randombytes: 124
         } ],
         38: [ function(require, module, exports) {
             module.exports = require("./browser/algorithms.json");
@@ -5461,8 +5463,8 @@
             "./verify": 43,
             buffer: 45,
             "create-hash": 50,
-            inherits: 94,
-            stream: 138
+            inherits: 101,
+            stream: 145
         } ],
         42: [ function(require, module, exports) {
             (function(Buffer) {
@@ -5600,7 +5602,7 @@
             buffer: 45,
             "create-hmac": 53,
             elliptic: 66,
-            "parse-asn1": 104
+            "parse-asn1": 111
         } ],
         43: [ function(require, module, exports) {
             (function(Buffer) {
@@ -5677,7 +5679,7 @@
             "bn.js": 16,
             buffer: 45,
             elliptic: 66,
-            "parse-asn1": 104
+            "parse-asn1": 111
         } ],
         44: [ function(require, module, exports) {
             (function(Buffer) {
@@ -6882,7 +6884,7 @@
             }).call(this, typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {});
         }, {
             "base64-js": 15,
-            ieee754: 92,
+            ieee754: 99,
             isarray: 46
         } ],
         46: [ function(require, module, exports) {
@@ -6892,97 +6894,95 @@
             };
         }, {} ],
         47: [ function(require, module, exports) {
-            (function(Buffer) {
-                var Transform = require("stream").Transform;
-                var inherits = require("inherits");
-                var StringDecoder = require("string_decoder").StringDecoder;
-                module.exports = CipherBase;
-                inherits(CipherBase, Transform);
-                function CipherBase(hashMode) {
-                    Transform.call(this);
-                    this.hashMode = typeof hashMode === "string";
-                    if (this.hashMode) {
-                        this[hashMode] = this._finalOrDigest;
-                    } else {
-                        this.final = this._finalOrDigest;
-                    }
-                    this._decoder = null;
-                    this._encoding = null;
+            var Buffer = require("safe-buffer").Buffer;
+            var Transform = require("stream").Transform;
+            var StringDecoder = require("string_decoder").StringDecoder;
+            var inherits = require("inherits");
+            function CipherBase(hashMode) {
+                Transform.call(this);
+                this.hashMode = typeof hashMode === "string";
+                if (this.hashMode) {
+                    this[hashMode] = this._finalOrDigest;
+                } else {
+                    this.final = this._finalOrDigest;
                 }
-                CipherBase.prototype.update = function(data, inputEnc, outputEnc) {
-                    if (typeof data === "string") {
-                        data = new Buffer(data, inputEnc);
-                    }
-                    var outData = this._update(data);
+                if (this._final) {
+                    this.__final = this._final;
+                    this._final = null;
+                }
+                this._decoder = null;
+                this._encoding = null;
+            }
+            inherits(CipherBase, Transform);
+            CipherBase.prototype.update = function(data, inputEnc, outputEnc) {
+                if (typeof data === "string") {
+                    data = Buffer.from(data, inputEnc);
+                }
+                var outData = this._update(data);
+                if (this.hashMode) return this;
+                if (outputEnc) {
+                    outData = this._toString(outData, outputEnc);
+                }
+                return outData;
+            };
+            CipherBase.prototype.setAutoPadding = function() {};
+            CipherBase.prototype.getAuthTag = function() {
+                throw new Error("trying to get auth tag in unsupported state");
+            };
+            CipherBase.prototype.setAuthTag = function() {
+                throw new Error("trying to set auth tag in unsupported state");
+            };
+            CipherBase.prototype.setAAD = function() {
+                throw new Error("trying to set aad in unsupported state");
+            };
+            CipherBase.prototype._transform = function(data, _, next) {
+                var err;
+                try {
                     if (this.hashMode) {
-                        return this;
+                        this._update(data);
+                    } else {
+                        this.push(this._update(data));
                     }
-                    if (outputEnc) {
-                        outData = this._toString(outData, outputEnc);
-                    }
-                    return outData;
-                };
-                CipherBase.prototype.setAutoPadding = function() {};
-                CipherBase.prototype.getAuthTag = function() {
-                    throw new Error("trying to get auth tag in unsupported state");
-                };
-                CipherBase.prototype.setAuthTag = function() {
-                    throw new Error("trying to set auth tag in unsupported state");
-                };
-                CipherBase.prototype.setAAD = function() {
-                    throw new Error("trying to set aad in unsupported state");
-                };
-                CipherBase.prototype._transform = function(data, _, next) {
-                    var err;
-                    try {
-                        if (this.hashMode) {
-                            this._update(data);
-                        } else {
-                            this.push(this._update(data));
-                        }
-                    } catch (e) {
-                        err = e;
-                    } finally {
-                        next(err);
-                    }
-                };
-                CipherBase.prototype._flush = function(done) {
-                    var err;
-                    try {
-                        this.push(this._final());
-                    } catch (e) {
-                        err = e;
-                    } finally {
-                        done(err);
-                    }
-                };
-                CipherBase.prototype._finalOrDigest = function(outputEnc) {
-                    var outData = this._final() || new Buffer("");
-                    if (outputEnc) {
-                        outData = this._toString(outData, outputEnc, true);
-                    }
-                    return outData;
-                };
-                CipherBase.prototype._toString = function(value, enc, fin) {
-                    if (!this._decoder) {
-                        this._decoder = new StringDecoder(enc);
-                        this._encoding = enc;
-                    }
-                    if (this._encoding !== enc) {
-                        throw new Error("can't switch encodings");
-                    }
-                    var out = this._decoder.write(value);
-                    if (fin) {
-                        out += this._decoder.end();
-                    }
-                    return out;
-                };
-            }).call(this, require("buffer").Buffer);
+                } catch (e) {
+                    err = e;
+                } finally {
+                    next(err);
+                }
+            };
+            CipherBase.prototype._flush = function(done) {
+                var err;
+                try {
+                    this.push(this.__final());
+                } catch (e) {
+                    err = e;
+                }
+                done(err);
+            };
+            CipherBase.prototype._finalOrDigest = function(outputEnc) {
+                var outData = this.__final() || Buffer.alloc(0);
+                if (outputEnc) {
+                    outData = this._toString(outData, outputEnc, true);
+                }
+                return outData;
+            };
+            CipherBase.prototype._toString = function(value, enc, fin) {
+                if (!this._decoder) {
+                    this._decoder = new StringDecoder(enc);
+                    this._encoding = enc;
+                }
+                if (this._encoding !== enc) throw new Error("can't switch encodings");
+                var out = this._decoder.write(value);
+                if (fin) {
+                    out += this._decoder.end();
+                }
+                return out;
+            };
+            module.exports = CipherBase;
         }, {
-            buffer: 45,
-            inherits: 94,
-            stream: 138,
-            string_decoder: 139
+            inherits: 101,
+            "safe-buffer": 136,
+            stream: 145,
+            string_decoder: 146
         } ],
         48: [ function(require, module, exports) {
             (function(Buffer) {
@@ -7053,7 +7053,7 @@
                 isBuffer: require("../../is-buffer/index.js")
             });
         }, {
-            "../../is-buffer/index.js": 95
+            "../../is-buffer/index.js": 102
         } ],
         49: [ function(require, module, exports) {
             (function(Buffer) {
@@ -7219,9 +7219,9 @@
             "./md5": 52,
             buffer: 45,
             "cipher-base": 47,
-            inherits: 94,
-            ripemd160: 128,
-            "sha.js": 131
+            inherits: 101,
+            ripemd160: 135,
+            "sha.js": 138
         } ],
         51: [ function(require, module, exports) {
             (function(Buffer) {
@@ -7425,10 +7425,10 @@
             "./legacy": 54,
             "cipher-base": 47,
             "create-hash/md5": 52,
-            inherits: 94,
-            ripemd160: 128,
-            "safe-buffer": 129,
-            "sha.js": 131
+            inherits: 101,
+            ripemd160: 135,
+            "safe-buffer": 136,
+            "sha.js": 138
         } ],
         54: [ function(require, module, exports) {
             "use strict";
@@ -7468,15 +7468,17 @@
             module.exports = Hmac;
         }, {
             "cipher-base": 47,
-            inherits: 94,
-            "safe-buffer": 129
+            inherits: 101,
+            "safe-buffer": 136
         } ],
         55: [ function(require, module, exports) {
             "use strict";
             exports.randomBytes = exports.rng = exports.pseudoRandomBytes = exports.prng = require("randombytes");
             exports.createHash = exports.Hash = require("create-hash");
             exports.createHmac = exports.Hmac = require("create-hmac");
-            var hashes = [ "sha1", "sha224", "sha256", "sha384", "sha512", "md5", "rmd160" ].concat(Object.keys(require("browserify-sign/algos")));
+            var algos = require("browserify-sign/algos");
+            var algoKeys = Object.keys(algos);
+            var hashes = [ "sha1", "sha224", "sha256", "sha384", "sha512", "md5", "rmd160" ].concat(algoKeys);
             exports.getHashes = function() {
                 return hashes;
             };
@@ -7484,27 +7486,53 @@
             exports.pbkdf2 = p.pbkdf2;
             exports.pbkdf2Sync = p.pbkdf2Sync;
             var aes = require("browserify-cipher");
-            [ "Cipher", "createCipher", "Cipheriv", "createCipheriv", "Decipher", "createDecipher", "Decipheriv", "createDecipheriv", "getCiphers", "listCiphers" ].forEach(function(key) {
-                exports[key] = aes[key];
-            });
+            exports.Cipher = aes.Cipher;
+            exports.createCipher = aes.createCipher;
+            exports.Cipheriv = aes.Cipheriv;
+            exports.createCipheriv = aes.createCipheriv;
+            exports.Decipher = aes.Decipher;
+            exports.createDecipher = aes.createDecipher;
+            exports.Decipheriv = aes.Decipheriv;
+            exports.createDecipheriv = aes.createDecipheriv;
+            exports.getCiphers = aes.getCiphers;
+            exports.listCiphers = aes.listCiphers;
             var dh = require("diffie-hellman");
-            [ "DiffieHellmanGroup", "createDiffieHellmanGroup", "getDiffieHellman", "createDiffieHellman", "DiffieHellman" ].forEach(function(key) {
-                exports[key] = dh[key];
-            });
+            exports.DiffieHellmanGroup = dh.DiffieHellmanGroup;
+            exports.createDiffieHellmanGroup = dh.createDiffieHellmanGroup;
+            exports.getDiffieHellman = dh.getDiffieHellman;
+            exports.createDiffieHellman = dh.createDiffieHellman;
+            exports.DiffieHellman = dh.DiffieHellman;
             var sign = require("browserify-sign");
-            [ "createSign", "Sign", "createVerify", "Verify" ].forEach(function(key) {
-                exports[key] = sign[key];
-            });
+            exports.createSign = sign.createSign;
+            exports.Sign = sign.Sign;
+            exports.createVerify = sign.createVerify;
+            exports.Verify = sign.Verify;
             exports.createECDH = require("create-ecdh");
             var publicEncrypt = require("public-encrypt");
-            [ "publicEncrypt", "privateEncrypt", "publicDecrypt", "privateDecrypt" ].forEach(function(key) {
-                exports[key] = publicEncrypt[key];
-            });
-            [ "createCredentials" ].forEach(function(name) {
-                exports[name] = function() {
-                    throw new Error([ "sorry, " + name + " is not implemented yet", "we accept pull requests", "https://github.com/crypto-browserify/crypto-browserify" ].join("\n"));
-                };
-            });
+            exports.publicEncrypt = publicEncrypt.publicEncrypt;
+            exports.privateEncrypt = publicEncrypt.privateEncrypt;
+            exports.publicDecrypt = publicEncrypt.publicDecrypt;
+            exports.privateDecrypt = publicEncrypt.privateDecrypt;
+            exports.createCredentials = function() {
+                throw new Error([ "sorry, createCredentials is not implemented yet", "we accept pull requests", "https://github.com/crypto-browserify/crypto-browserify" ].join("\n"));
+            };
+            exports.constants = {
+                DH_CHECK_P_NOT_SAFE_PRIME: 2,
+                DH_CHECK_P_NOT_PRIME: 1,
+                DH_UNABLE_TO_CHECK_GENERATOR: 4,
+                DH_NOT_SUITABLE_GENERATOR: 8,
+                NPN_ENABLED: 1,
+                ALPN_ENABLED: 1,
+                RSA_PKCS1_PADDING: 1,
+                RSA_SSLV23_PADDING: 2,
+                RSA_NO_PADDING: 3,
+                RSA_PKCS1_OAEP_PADDING: 4,
+                RSA_X931_PADDING: 5,
+                RSA_PKCS1_PSS_PADDING: 6,
+                POINT_CONVERSION_COMPRESSED: 2,
+                POINT_CONVERSION_UNCOMPRESSED: 4,
+                POINT_CONVERSION_HYBRID: 6
+            };
         }, {
             "browserify-cipher": 34,
             "browserify-sign": 41,
@@ -7513,9 +7541,9 @@
             "create-hash": 50,
             "create-hmac": 53,
             "diffie-hellman": 62,
-            pbkdf2: 105,
-            "public-encrypt": 111,
-            randombytes: 117
+            pbkdf2: 112,
+            "public-encrypt": 118,
+            randombytes: 124
         } ],
         56: [ function(require, module, exports) {
             "use strict";
@@ -7577,8 +7605,8 @@
                 }
             };
         }, {
-            inherits: 94,
-            "minimalistic-assert": 98
+            inherits: 101,
+            "minimalistic-assert": 105
         } ],
         58: [ function(require, module, exports) {
             "use strict";
@@ -7665,7 +7693,7 @@
                 return this._unpad(out);
             };
         }, {
-            "minimalistic-assert": 98
+            "minimalistic-assert": 105
         } ],
         59: [ function(require, module, exports) {
             "use strict";
@@ -7764,8 +7792,8 @@
             };
         }, {
             "../des": 56,
-            inherits: 94,
-            "minimalistic-assert": 98
+            inherits: 101,
+            "minimalistic-assert": 105
         } ],
         60: [ function(require, module, exports) {
             "use strict";
@@ -7823,8 +7851,8 @@
             EDE.prototype._unpad = DES.prototype._unpad;
         }, {
             "../des": 56,
-            inherits: 94,
-            "minimalistic-assert": 98
+            inherits: 101,
+            "minimalistic-assert": 105
         } ],
         61: [ function(require, module, exports) {
             "use strict";
@@ -8180,8 +8208,8 @@
             "./generatePrime": 64,
             "bn.js": 16,
             buffer: 45,
-            "miller-rabin": 97,
-            randombytes: 117
+            "miller-rabin": 104,
+            randombytes: 124
         } ],
         64: [ function(require, module, exports) {
             var randomBytes = require("randombytes");
@@ -8271,8 +8299,8 @@
             }
         }, {
             "bn.js": 16,
-            "miller-rabin": 97,
-            randombytes: 117
+            "miller-rabin": 104,
+            randombytes: 124
         } ],
         65: [ function(require, module, exports) {
             module.exports = {
@@ -8828,7 +8856,7 @@
             "../../elliptic": 66,
             "../curve": 69,
             "bn.js": 16,
-            inherits: 94
+            inherits: 101
         } ],
         69: [ function(require, module, exports) {
             "use strict";
@@ -8967,7 +8995,7 @@
             "../../elliptic": 66,
             "../curve": 69,
             "bn.js": 16,
-            inherits: 94
+            inherits: 101
         } ],
         71: [ function(require, module, exports) {
             "use strict";
@@ -9604,7 +9632,7 @@
             "../../elliptic": 66,
             "../curve": 69,
             "bn.js": 16,
-            inherits: 94
+            inherits: 101
         } ],
         72: [ function(require, module, exports) {
             "use strict";
@@ -9904,7 +9932,7 @@
             "./key": 74,
             "./signature": 75,
             "bn.js": 16,
-            "hmac-drbg": 91
+            "hmac-drbg": 98
         } ],
         74: [ function(require, module, exports) {
             "use strict";
@@ -10412,16 +10440,16 @@
             utils.intFromLE = intFromLE;
         }, {
             "bn.js": 16,
-            "minimalistic-assert": 98,
-            "minimalistic-crypto-utils": 99
+            "minimalistic-assert": 105,
+            "minimalistic-crypto-utils": 106
         } ],
         81: [ function(require, module, exports) {
             module.exports = {
                 _args: [ [ {
-                    raw: "elliptic@github:indutny/elliptic",
+                    raw: "github:indutny/elliptic",
                     scope: null,
-                    escapedName: "elliptic",
-                    name: "elliptic",
+                    escapedName: null,
+                    name: null,
                     rawSpec: "github:indutny/elliptic",
                     spec: "github:indutny/elliptic",
                     type: "hosted",
@@ -10434,17 +10462,17 @@
                         shortcut: "github:indutny/elliptic",
                         directUrl: "https://raw.githubusercontent.com/indutny/elliptic/master/package.json"
                     }
-                }, "/home/olitvin/htdocs/snatchapp-web-api/elliptic" ] ],
+                }, "/home/olitvin/share-home/htdocs/elliptic" ] ],
                 _from: "indutny/elliptic",
                 _id: "elliptic@6.4.0",
                 _inCache: true,
                 _location: "/elliptic",
                 _phantomChildren: {},
                 _requested: {
-                    raw: "elliptic@github:indutny/elliptic",
+                    raw: "github:indutny/elliptic",
                     scope: null,
-                    escapedName: "elliptic",
-                    name: "elliptic",
+                    escapedName: null,
+                    name: null,
                     rawSpec: "github:indutny/elliptic",
                     spec: "github:indutny/elliptic",
                     type: "hosted",
@@ -10458,12 +10486,12 @@
                         directUrl: "https://raw.githubusercontent.com/indutny/elliptic/master/package.json"
                     }
                 },
-                _requiredBy: [ "/", "/browserify-sign", "/create-ecdh" ],
+                _requiredBy: [ "#USER", "/", "/browserify-sign", "/create-ecdh" ],
                 _resolved: "git://github.com/indutny/elliptic.git#8628295cdea53ef5c55c5316ac3079dce83295d0",
-                _shasum: "1240f9547212bc5e184bf5c24a5f050f95a85f89",
+                _shasum: "055837fc745ce3dbd6508a98d556072e2488760e",
                 _shrinkwrap: null,
-                _spec: "elliptic@github:indutny/elliptic",
-                _where: "/home/olitvin/htdocs/snatchapp-web-api/elliptic",
+                _spec: "github:indutny/elliptic",
+                _where: "/home/olitvin/share-home/htdocs/elliptic",
                 author: {
                     name: "Fedor Indutny",
                     email: "fedor@indutny.com"
@@ -10839,8 +10867,8 @@
             }).call(this, require("buffer").Buffer);
         }, {
             buffer: 45,
-            inherits: 94,
-            stream: 138
+            inherits: 101,
+            stream: 145
         } ],
         85: [ function(require, module, exports) {
             var hash = exports;
@@ -10860,12 +10888,12 @@
             "./hash/hmac": 87,
             "./hash/ripemd": 88,
             "./hash/sha": 89,
-            "./hash/utils": 90
+            "./hash/utils": 96
         } ],
         86: [ function(require, module, exports) {
-            var hash = require("../hash");
-            var utils = hash.utils;
-            var assert = utils.assert;
+            "use strict";
+            var utils = require("./utils");
+            var assert = require("minimalistic-assert");
             function BlockHash() {
                 this.pending = null;
                 this.pendingTotal = 0;
@@ -10924,18 +10952,18 @@
                     res[i++] = 0;
                     res[i++] = 0;
                     res[i++] = 0;
-                    for (var t = 8; t < this.padLength; t++) res[i++] = 0;
+                    for (t = 8; t < this.padLength; t++) res[i++] = 0;
                 }
                 return res;
             };
         }, {
-            "../hash": 85
+            "./utils": 96,
+            "minimalistic-assert": 105
         } ],
         87: [ function(require, module, exports) {
-            var hmac = exports;
-            var hash = require("../hash");
-            var utils = hash.utils;
-            var assert = utils.assert;
+            "use strict";
+            var utils = require("./utils");
+            var assert = require("minimalistic-assert");
             function Hmac(hash, key, enc) {
                 if (!(this instanceof Hmac)) return new Hmac(hash, key, enc);
                 this.Hash = hash;
@@ -10950,9 +10978,9 @@
                 if (key.length > this.blockSize) key = new this.Hash().update(key).digest();
                 assert(key.length <= this.blockSize);
                 for (var i = key.length; i < this.blockSize; i++) key.push(0);
-                for (var i = 0; i < key.length; i++) key[i] ^= 54;
+                for (i = 0; i < key.length; i++) key[i] ^= 54;
                 this.inner = new this.Hash().update(key);
-                for (var i = 0; i < key.length; i++) key[i] ^= 106;
+                for (i = 0; i < key.length; i++) key[i] ^= 106;
                 this.outer = new this.Hash().update(key);
             };
             Hmac.prototype.update = function update(msg, enc) {
@@ -10964,16 +10992,18 @@
                 return this.outer.digest(enc);
             };
         }, {
-            "../hash": 85
+            "./utils": 96,
+            "minimalistic-assert": 105
         } ],
         88: [ function(require, module, exports) {
-            var hash = require("../hash");
-            var utils = hash.utils;
+            "use strict";
+            var utils = require("./utils");
+            var common = require("./common");
             var rotl32 = utils.rotl32;
             var sum32 = utils.sum32;
             var sum32_3 = utils.sum32_3;
             var sum32_4 = utils.sum32_4;
-            var BlockHash = hash.common.BlockHash;
+            var BlockHash = common.BlockHash;
             function RIPEMD160() {
                 if (!(this instanceof RIPEMD160)) return new RIPEMD160();
                 BlockHash.call(this);
@@ -11035,32 +11065,117 @@
             var s = [ 11, 14, 15, 12, 5, 8, 7, 9, 11, 13, 14, 15, 6, 7, 9, 8, 7, 6, 8, 13, 11, 9, 7, 15, 7, 12, 15, 9, 11, 7, 13, 12, 11, 13, 6, 7, 14, 9, 13, 15, 14, 8, 13, 6, 5, 12, 7, 5, 11, 12, 14, 15, 14, 15, 9, 8, 9, 14, 5, 6, 8, 6, 5, 12, 9, 15, 5, 11, 6, 8, 13, 12, 5, 12, 13, 14, 11, 8, 5, 6 ];
             var sh = [ 8, 9, 9, 11, 13, 15, 15, 5, 7, 7, 8, 11, 14, 14, 12, 6, 9, 13, 15, 7, 12, 8, 9, 11, 7, 7, 12, 7, 6, 15, 13, 11, 9, 7, 15, 11, 8, 6, 6, 14, 12, 13, 5, 14, 13, 13, 7, 5, 15, 5, 8, 11, 14, 14, 6, 14, 6, 9, 12, 9, 12, 5, 15, 8, 8, 5, 12, 9, 12, 5, 14, 6, 8, 13, 6, 5, 15, 13, 11, 11 ];
         }, {
-            "../hash": 85
+            "./common": 86,
+            "./utils": 96
         } ],
         89: [ function(require, module, exports) {
-            var hash = require("../hash");
-            var utils = hash.utils;
-            var assert = utils.assert;
-            var rotr32 = utils.rotr32;
+            "use strict";
+            exports.sha1 = require("./sha/1");
+            exports.sha224 = require("./sha/224");
+            exports.sha256 = require("./sha/256");
+            exports.sha384 = require("./sha/384");
+            exports.sha512 = require("./sha/512");
+        }, {
+            "./sha/1": 90,
+            "./sha/224": 91,
+            "./sha/256": 92,
+            "./sha/384": 93,
+            "./sha/512": 94
+        } ],
+        90: [ function(require, module, exports) {
+            "use strict";
+            var utils = require("../utils");
+            var common = require("../common");
+            var shaCommon = require("./common");
             var rotl32 = utils.rotl32;
+            var sum32 = utils.sum32;
+            var sum32_5 = utils.sum32_5;
+            var ft_1 = shaCommon.ft_1;
+            var BlockHash = common.BlockHash;
+            var sha1_K = [ 1518500249, 1859775393, 2400959708, 3395469782 ];
+            function SHA1() {
+                if (!(this instanceof SHA1)) return new SHA1();
+                BlockHash.call(this);
+                this.h = [ 1732584193, 4023233417, 2562383102, 271733878, 3285377520 ];
+                this.W = new Array(80);
+            }
+            utils.inherits(SHA1, BlockHash);
+            module.exports = SHA1;
+            SHA1.blockSize = 512;
+            SHA1.outSize = 160;
+            SHA1.hmacStrength = 80;
+            SHA1.padLength = 64;
+            SHA1.prototype._update = function _update(msg, start) {
+                var W = this.W;
+                for (var i = 0; i < 16; i++) W[i] = msg[start + i];
+                for (;i < W.length; i++) W[i] = rotl32(W[i - 3] ^ W[i - 8] ^ W[i - 14] ^ W[i - 16], 1);
+                var a = this.h[0];
+                var b = this.h[1];
+                var c = this.h[2];
+                var d = this.h[3];
+                var e = this.h[4];
+                for (i = 0; i < W.length; i++) {
+                    var s = ~~(i / 20);
+                    var t = sum32_5(rotl32(a, 5), ft_1(s, b, c, d), e, W[i], sha1_K[s]);
+                    e = d;
+                    d = c;
+                    c = rotl32(b, 30);
+                    b = a;
+                    a = t;
+                }
+                this.h[0] = sum32(this.h[0], a);
+                this.h[1] = sum32(this.h[1], b);
+                this.h[2] = sum32(this.h[2], c);
+                this.h[3] = sum32(this.h[3], d);
+                this.h[4] = sum32(this.h[4], e);
+            };
+            SHA1.prototype._digest = function digest(enc) {
+                if (enc === "hex") return utils.toHex32(this.h, "big"); else return utils.split32(this.h, "big");
+            };
+        }, {
+            "../common": 86,
+            "../utils": 96,
+            "./common": 95
+        } ],
+        91: [ function(require, module, exports) {
+            "use strict";
+            var utils = require("../utils");
+            var SHA256 = require("./256");
+            function SHA224() {
+                if (!(this instanceof SHA224)) return new SHA224();
+                SHA256.call(this);
+                this.h = [ 3238371032, 914150663, 812702999, 4144912697, 4290775857, 1750603025, 1694076839, 3204075428 ];
+            }
+            utils.inherits(SHA224, SHA256);
+            module.exports = SHA224;
+            SHA224.blockSize = 512;
+            SHA224.outSize = 224;
+            SHA224.hmacStrength = 192;
+            SHA224.padLength = 64;
+            SHA224.prototype._digest = function digest(enc) {
+                if (enc === "hex") return utils.toHex32(this.h.slice(0, 7), "big"); else return utils.split32(this.h.slice(0, 7), "big");
+            };
+        }, {
+            "../utils": 96,
+            "./256": 92
+        } ],
+        92: [ function(require, module, exports) {
+            "use strict";
+            var utils = require("../utils");
+            var common = require("../common");
+            var shaCommon = require("./common");
+            var assert = require("minimalistic-assert");
             var sum32 = utils.sum32;
             var sum32_4 = utils.sum32_4;
             var sum32_5 = utils.sum32_5;
-            var rotr64_hi = utils.rotr64_hi;
-            var rotr64_lo = utils.rotr64_lo;
-            var shr64_hi = utils.shr64_hi;
-            var shr64_lo = utils.shr64_lo;
-            var sum64 = utils.sum64;
-            var sum64_hi = utils.sum64_hi;
-            var sum64_lo = utils.sum64_lo;
-            var sum64_4_hi = utils.sum64_4_hi;
-            var sum64_4_lo = utils.sum64_4_lo;
-            var sum64_5_hi = utils.sum64_5_hi;
-            var sum64_5_lo = utils.sum64_5_lo;
-            var BlockHash = hash.common.BlockHash;
+            var ch32 = shaCommon.ch32;
+            var maj32 = shaCommon.maj32;
+            var s0_256 = shaCommon.s0_256;
+            var s1_256 = shaCommon.s1_256;
+            var g0_256 = shaCommon.g0_256;
+            var g1_256 = shaCommon.g1_256;
+            var BlockHash = common.BlockHash;
             var sha256_K = [ 1116352408, 1899447441, 3049323471, 3921009573, 961987163, 1508970993, 2453635748, 2870763221, 3624381080, 310598401, 607225278, 1426881987, 1925078388, 2162078206, 2614888103, 3248222580, 3835390401, 4022224774, 264347078, 604807628, 770255983, 1249150122, 1555081692, 1996064986, 2554220882, 2821834349, 2952996808, 3210313671, 3336571891, 3584528711, 113926993, 338241895, 666307205, 773529912, 1294757372, 1396182291, 1695183700, 1986661051, 2177026350, 2456956037, 2730485921, 2820302411, 3259730800, 3345764771, 3516065817, 3600352804, 4094571909, 275423344, 430227734, 506948616, 659060556, 883997877, 958139571, 1322822218, 1537002063, 1747873779, 1955562222, 2024104815, 2227730452, 2361852424, 2428436474, 2756734187, 3204031479, 3329325298 ];
-            var sha512_K = [ 1116352408, 3609767458, 1899447441, 602891725, 3049323471, 3964484399, 3921009573, 2173295548, 961987163, 4081628472, 1508970993, 3053834265, 2453635748, 2937671579, 2870763221, 3664609560, 3624381080, 2734883394, 310598401, 1164996542, 607225278, 1323610764, 1426881987, 3590304994, 1925078388, 4068182383, 2162078206, 991336113, 2614888103, 633803317, 3248222580, 3479774868, 3835390401, 2666613458, 4022224774, 944711139, 264347078, 2341262773, 604807628, 2007800933, 770255983, 1495990901, 1249150122, 1856431235, 1555081692, 3175218132, 1996064986, 2198950837, 2554220882, 3999719339, 2821834349, 766784016, 2952996808, 2566594879, 3210313671, 3203337956, 3336571891, 1034457026, 3584528711, 2466948901, 113926993, 3758326383, 338241895, 168717936, 666307205, 1188179964, 773529912, 1546045734, 1294757372, 1522805485, 1396182291, 2643833823, 1695183700, 2343527390, 1986661051, 1014477480, 2177026350, 1206759142, 2456956037, 344077627, 2730485921, 1290863460, 2820302411, 3158454273, 3259730800, 3505952657, 3345764771, 106217008, 3516065817, 3606008344, 3600352804, 1432725776, 4094571909, 1467031594, 275423344, 851169720, 430227734, 3100823752, 506948616, 1363258195, 659060556, 3750685593, 883997877, 3785050280, 958139571, 3318307427, 1322822218, 3812723403, 1537002063, 2003034995, 1747873779, 3602036899, 1955562222, 1575990012, 2024104815, 1125592928, 2227730452, 2716904306, 2361852424, 442776044, 2428436474, 593698344, 2756734187, 3733110249, 3204031479, 2999351573, 3329325298, 3815920427, 3391569614, 3928383900, 3515267271, 566280711, 3940187606, 3454069534, 4118630271, 4000239992, 116418474, 1914138554, 174292421, 2731055270, 289380356, 3203993006, 460393269, 320620315, 685471733, 587496836, 852142971, 1086792851, 1017036298, 365543100, 1126000580, 2618297676, 1288033470, 3409855158, 1501505948, 4234509866, 1607167915, 987167468, 1816402316, 1246189591 ];
-            var sha1_K = [ 1518500249, 1859775393, 2400959708, 3395469782 ];
             function SHA256() {
                 if (!(this instanceof SHA256)) return new SHA256();
                 BlockHash.call(this);
@@ -11069,7 +11184,7 @@
                 this.W = new Array(64);
             }
             utils.inherits(SHA256, BlockHash);
-            exports.sha256 = SHA256;
+            module.exports = SHA256;
             SHA256.blockSize = 512;
             SHA256.outSize = 256;
             SHA256.hmacStrength = 192;
@@ -11087,7 +11202,7 @@
                 var g = this.h[6];
                 var h = this.h[7];
                 assert(this.k.length === W.length);
-                for (var i = 0; i < W.length; i++) {
+                for (i = 0; i < W.length; i++) {
                     var T1 = sum32_5(h, s1_256(e), ch32(e, f, g), this.k[i], W[i]);
                     var T2 = sum32(s0_256(a), maj32(a, b, c));
                     h = g;
@@ -11111,20 +11226,52 @@
             SHA256.prototype._digest = function digest(enc) {
                 if (enc === "hex") return utils.toHex32(this.h, "big"); else return utils.split32(this.h, "big");
             };
-            function SHA224() {
-                if (!(this instanceof SHA224)) return new SHA224();
-                SHA256.call(this);
-                this.h = [ 3238371032, 914150663, 812702999, 4144912697, 4290775857, 1750603025, 1694076839, 3204075428 ];
+        }, {
+            "../common": 86,
+            "../utils": 96,
+            "./common": 95,
+            "minimalistic-assert": 105
+        } ],
+        93: [ function(require, module, exports) {
+            "use strict";
+            var utils = require("../utils");
+            var SHA512 = require("./512");
+            function SHA384() {
+                if (!(this instanceof SHA384)) return new SHA384();
+                SHA512.call(this);
+                this.h = [ 3418070365, 3238371032, 1654270250, 914150663, 2438529370, 812702999, 355462360, 4144912697, 1731405415, 4290775857, 2394180231, 1750603025, 3675008525, 1694076839, 1203062813, 3204075428 ];
             }
-            utils.inherits(SHA224, SHA256);
-            exports.sha224 = SHA224;
-            SHA224.blockSize = 512;
-            SHA224.outSize = 224;
-            SHA224.hmacStrength = 192;
-            SHA224.padLength = 64;
-            SHA224.prototype._digest = function digest(enc) {
-                if (enc === "hex") return utils.toHex32(this.h.slice(0, 7), "big"); else return utils.split32(this.h.slice(0, 7), "big");
+            utils.inherits(SHA384, SHA512);
+            module.exports = SHA384;
+            SHA384.blockSize = 1024;
+            SHA384.outSize = 384;
+            SHA384.hmacStrength = 192;
+            SHA384.padLength = 128;
+            SHA384.prototype._digest = function digest(enc) {
+                if (enc === "hex") return utils.toHex32(this.h.slice(0, 12), "big"); else return utils.split32(this.h.slice(0, 12), "big");
             };
+        }, {
+            "../utils": 96,
+            "./512": 94
+        } ],
+        94: [ function(require, module, exports) {
+            "use strict";
+            var utils = require("../utils");
+            var common = require("../common");
+            var assert = require("minimalistic-assert");
+            var rotr64_hi = utils.rotr64_hi;
+            var rotr64_lo = utils.rotr64_lo;
+            var shr64_hi = utils.shr64_hi;
+            var shr64_lo = utils.shr64_lo;
+            var sum64 = utils.sum64;
+            var sum64_hi = utils.sum64_hi;
+            var sum64_lo = utils.sum64_lo;
+            var sum64_4_hi = utils.sum64_4_hi;
+            var sum64_4_lo = utils.sum64_4_lo;
+            var sum64_5_hi = utils.sum64_5_hi;
+            var sum64_5_lo = utils.sum64_5_lo;
+            var BlockHash = common.BlockHash;
+            var sha512_K = [ 1116352408, 3609767458, 1899447441, 602891725, 3049323471, 3964484399, 3921009573, 2173295548, 961987163, 4081628472, 1508970993, 3053834265, 2453635748, 2937671579, 2870763221, 3664609560, 3624381080, 2734883394, 310598401, 1164996542, 607225278, 1323610764, 1426881987, 3590304994, 1925078388, 4068182383, 2162078206, 991336113, 2614888103, 633803317, 3248222580, 3479774868, 3835390401, 2666613458, 4022224774, 944711139, 264347078, 2341262773, 604807628, 2007800933, 770255983, 1495990901, 1249150122, 1856431235, 1555081692, 3175218132, 1996064986, 2198950837, 2554220882, 3999719339, 2821834349, 766784016, 2952996808, 2566594879, 3210313671, 3203337956, 3336571891, 1034457026, 3584528711, 2466948901, 113926993, 3758326383, 338241895, 168717936, 666307205, 1188179964, 773529912, 1546045734, 1294757372, 1522805485, 1396182291, 2643833823, 1695183700, 2343527390, 1986661051, 1014477480, 2177026350, 1206759142, 2456956037, 344077627, 2730485921, 1290863460, 2820302411, 3158454273, 3259730800, 3505952657, 3345764771, 106217008, 3516065817, 3606008344, 3600352804, 1432725776, 4094571909, 1467031594, 275423344, 851169720, 430227734, 3100823752, 506948616, 1363258195, 659060556, 3750685593, 883997877, 3785050280, 958139571, 3318307427, 1322822218, 3812723403, 1537002063, 2003034995, 1747873779, 3602036899, 1955562222, 1575990012, 2024104815, 1125592928, 2227730452, 2716904306, 2361852424, 442776044, 2428436474, 593698344, 2756734187, 3733110249, 3204031479, 2999351573, 3329325298, 3815920427, 3391569614, 3928383900, 3515267271, 566280711, 3940187606, 3454069534, 4118630271, 4000239992, 116418474, 1914138554, 174292421, 2731055270, 289380356, 3203993006, 460393269, 320620315, 685471733, 587496836, 852142971, 1086792851, 1017036298, 365543100, 1126000580, 2618297676, 1288033470, 3409855158, 1501505948, 4234509866, 1607167915, 987167468, 1816402316, 1246189591 ];
             function SHA512() {
                 if (!(this instanceof SHA512)) return new SHA512();
                 BlockHash.call(this);
@@ -11133,7 +11280,7 @@
                 this.W = new Array(160);
             }
             utils.inherits(SHA512, BlockHash);
-            exports.sha512 = SHA512;
+            module.exports = SHA512;
             SHA512.blockSize = 1024;
             SHA512.outSize = 512;
             SHA512.hmacStrength = 192;
@@ -11187,10 +11334,10 @@
                     var c4_lo = W[i + 1];
                     var T1_hi = sum64_5_hi(c0_hi, c0_lo, c1_hi, c1_lo, c2_hi, c2_lo, c3_hi, c3_lo, c4_hi, c4_lo);
                     var T1_lo = sum64_5_lo(c0_hi, c0_lo, c1_hi, c1_lo, c2_hi, c2_lo, c3_hi, c3_lo, c4_hi, c4_lo);
-                    var c0_hi = s0_512_hi(ah, al);
-                    var c0_lo = s0_512_lo(ah, al);
-                    var c1_hi = maj64_hi(ah, al, bh, bl, ch, cl);
-                    var c1_lo = maj64_lo(ah, al, bh, bl, ch, cl);
+                    c0_hi = s0_512_hi(ah, al);
+                    c0_lo = s0_512_lo(ah, al);
+                    c1_hi = maj64_hi(ah, al, bh, bl, ch, cl);
+                    c1_lo = maj64_lo(ah, al, bh, bl, ch, cl);
                     var T2_hi = sum64_hi(c0_hi, c0_lo, c1_hi, c1_lo);
                     var T2_lo = sum64_lo(c0_hi, c0_lo, c1_hi, c1_lo);
                     hh = gh;
@@ -11222,86 +11369,7 @@
             SHA512.prototype._digest = function digest(enc) {
                 if (enc === "hex") return utils.toHex32(this.h, "big"); else return utils.split32(this.h, "big");
             };
-            function SHA384() {
-                if (!(this instanceof SHA384)) return new SHA384();
-                SHA512.call(this);
-                this.h = [ 3418070365, 3238371032, 1654270250, 914150663, 2438529370, 812702999, 355462360, 4144912697, 1731405415, 4290775857, 2394180231, 1750603025, 3675008525, 1694076839, 1203062813, 3204075428 ];
-            }
-            utils.inherits(SHA384, SHA512);
-            exports.sha384 = SHA384;
-            SHA384.blockSize = 1024;
-            SHA384.outSize = 384;
-            SHA384.hmacStrength = 192;
-            SHA384.padLength = 128;
-            SHA384.prototype._digest = function digest(enc) {
-                if (enc === "hex") return utils.toHex32(this.h.slice(0, 12), "big"); else return utils.split32(this.h.slice(0, 12), "big");
-            };
-            function SHA1() {
-                if (!(this instanceof SHA1)) return new SHA1();
-                BlockHash.call(this);
-                this.h = [ 1732584193, 4023233417, 2562383102, 271733878, 3285377520 ];
-                this.W = new Array(80);
-            }
-            utils.inherits(SHA1, BlockHash);
-            exports.sha1 = SHA1;
-            SHA1.blockSize = 512;
-            SHA1.outSize = 160;
-            SHA1.hmacStrength = 80;
-            SHA1.padLength = 64;
-            SHA1.prototype._update = function _update(msg, start) {
-                var W = this.W;
-                for (var i = 0; i < 16; i++) W[i] = msg[start + i];
-                for (;i < W.length; i++) W[i] = rotl32(W[i - 3] ^ W[i - 8] ^ W[i - 14] ^ W[i - 16], 1);
-                var a = this.h[0];
-                var b = this.h[1];
-                var c = this.h[2];
-                var d = this.h[3];
-                var e = this.h[4];
-                for (var i = 0; i < W.length; i++) {
-                    var s = ~~(i / 20);
-                    var t = sum32_5(rotl32(a, 5), ft_1(s, b, c, d), e, W[i], sha1_K[s]);
-                    e = d;
-                    d = c;
-                    c = rotl32(b, 30);
-                    b = a;
-                    a = t;
-                }
-                this.h[0] = sum32(this.h[0], a);
-                this.h[1] = sum32(this.h[1], b);
-                this.h[2] = sum32(this.h[2], c);
-                this.h[3] = sum32(this.h[3], d);
-                this.h[4] = sum32(this.h[4], e);
-            };
-            SHA1.prototype._digest = function digest(enc) {
-                if (enc === "hex") return utils.toHex32(this.h, "big"); else return utils.split32(this.h, "big");
-            };
-            function ch32(x, y, z) {
-                return x & y ^ ~x & z;
-            }
-            function maj32(x, y, z) {
-                return x & y ^ x & z ^ y & z;
-            }
-            function p32(x, y, z) {
-                return x ^ y ^ z;
-            }
-            function s0_256(x) {
-                return rotr32(x, 2) ^ rotr32(x, 13) ^ rotr32(x, 22);
-            }
-            function s1_256(x) {
-                return rotr32(x, 6) ^ rotr32(x, 11) ^ rotr32(x, 25);
-            }
-            function g0_256(x) {
-                return rotr32(x, 7) ^ rotr32(x, 18) ^ x >>> 3;
-            }
-            function g1_256(x) {
-                return rotr32(x, 17) ^ rotr32(x, 19) ^ x >>> 10;
-            }
-            function ft_1(s, x, y, z) {
-                if (s === 0) return ch32(x, y, z);
-                if (s === 1 || s === 3) return p32(x, y, z);
-                if (s === 2) return maj32(x, y, z);
-            }
-            function ch64_hi(xh, xl, yh, yl, zh, zl) {
+            function ch64_hi(xh, xl, yh, yl, zh) {
                 var r = xh & yh ^ ~xh & zh;
                 if (r < 0) r += 4294967296;
                 return r;
@@ -11311,7 +11379,7 @@
                 if (r < 0) r += 4294967296;
                 return r;
             }
-            function maj64_hi(xh, xl, yh, yl, zh, zl) {
+            function maj64_hi(xh, xl, yh, yl, zh) {
                 var r = xh & yh ^ xh & zh ^ yh & zh;
                 if (r < 0) r += 4294967296;
                 return r;
@@ -11386,11 +11454,56 @@
                 return r;
             }
         }, {
-            "../hash": 85
+            "../common": 86,
+            "../utils": 96,
+            "minimalistic-assert": 105
         } ],
-        90: [ function(require, module, exports) {
-            var utils = exports;
+        95: [ function(require, module, exports) {
+            "use strict";
+            var utils = require("../utils");
+            var rotr32 = utils.rotr32;
+            function ft_1(s, x, y, z) {
+                if (s === 0) return ch32(x, y, z);
+                if (s === 1 || s === 3) return p32(x, y, z);
+                if (s === 2) return maj32(x, y, z);
+            }
+            exports.ft_1 = ft_1;
+            function ch32(x, y, z) {
+                return x & y ^ ~x & z;
+            }
+            exports.ch32 = ch32;
+            function maj32(x, y, z) {
+                return x & y ^ x & z ^ y & z;
+            }
+            exports.maj32 = maj32;
+            function p32(x, y, z) {
+                return x ^ y ^ z;
+            }
+            exports.p32 = p32;
+            function s0_256(x) {
+                return rotr32(x, 2) ^ rotr32(x, 13) ^ rotr32(x, 22);
+            }
+            exports.s0_256 = s0_256;
+            function s1_256(x) {
+                return rotr32(x, 6) ^ rotr32(x, 11) ^ rotr32(x, 25);
+            }
+            exports.s1_256 = s1_256;
+            function g0_256(x) {
+                return rotr32(x, 7) ^ rotr32(x, 18) ^ x >>> 3;
+            }
+            exports.g0_256 = g0_256;
+            function g1_256(x) {
+                return rotr32(x, 17) ^ rotr32(x, 19) ^ x >>> 10;
+            }
+            exports.g1_256 = g1_256;
+        }, {
+            "../utils": 96
+        } ],
+        96: [ function(require, module, exports) {
+            "use strict";
+            var assert = require("minimalistic-assert");
             var inherits = require("inherits");
+            exports.inherits = inherits;
             function toArray(msg, enc) {
                 if (Array.isArray(msg)) return msg.slice();
                 if (!msg) return [];
@@ -11406,25 +11519,25 @@
                     } else if (enc === "hex") {
                         msg = msg.replace(/[^a-z0-9]+/gi, "");
                         if (msg.length % 2 !== 0) msg = "0" + msg;
-                        for (var i = 0; i < msg.length; i += 2) res.push(parseInt(msg[i] + msg[i + 1], 16));
+                        for (i = 0; i < msg.length; i += 2) res.push(parseInt(msg[i] + msg[i + 1], 16));
                     }
                 } else {
-                    for (var i = 0; i < msg.length; i++) res[i] = msg[i] | 0;
+                    for (i = 0; i < msg.length; i++) res[i] = msg[i] | 0;
                 }
                 return res;
             }
-            utils.toArray = toArray;
+            exports.toArray = toArray;
             function toHex(msg) {
                 var res = "";
                 for (var i = 0; i < msg.length; i++) res += zero2(msg[i].toString(16));
                 return res;
             }
-            utils.toHex = toHex;
+            exports.toHex = toHex;
             function htonl(w) {
                 var res = w >>> 24 | w >>> 8 & 65280 | w << 8 & 16711680 | (w & 255) << 24;
                 return res >>> 0;
             }
-            utils.htonl = htonl;
+            exports.htonl = htonl;
             function toHex32(msg, endian) {
                 var res = "";
                 for (var i = 0; i < msg.length; i++) {
@@ -11434,15 +11547,15 @@
                 }
                 return res;
             }
-            utils.toHex32 = toHex32;
+            exports.toHex32 = toHex32;
             function zero2(word) {
                 if (word.length === 1) return "0" + word; else return word;
             }
-            utils.zero2 = zero2;
+            exports.zero2 = zero2;
             function zero8(word) {
                 if (word.length === 7) return "0" + word; else if (word.length === 6) return "00" + word; else if (word.length === 5) return "000" + word; else if (word.length === 4) return "0000" + word; else if (word.length === 3) return "00000" + word; else if (word.length === 2) return "000000" + word; else if (word.length === 1) return "0000000" + word; else return word;
             }
-            utils.zero8 = zero8;
+            exports.zero8 = zero8;
             function join32(msg, start, end, endian) {
                 var len = end - start;
                 assert(len % 4 === 0);
@@ -11454,7 +11567,7 @@
                 }
                 return res;
             }
-            utils.join32 = join32;
+            exports.join32 = join32;
             function split32(msg, endian) {
                 var res = new Array(msg.length * 4);
                 for (var i = 0, k = 0; i < msg.length; i++, k += 4) {
@@ -11473,36 +11586,31 @@
                 }
                 return res;
             }
-            utils.split32 = split32;
+            exports.split32 = split32;
             function rotr32(w, b) {
                 return w >>> b | w << 32 - b;
             }
-            utils.rotr32 = rotr32;
+            exports.rotr32 = rotr32;
             function rotl32(w, b) {
                 return w << b | w >>> 32 - b;
             }
-            utils.rotl32 = rotl32;
+            exports.rotl32 = rotl32;
             function sum32(a, b) {
                 return a + b >>> 0;
             }
-            utils.sum32 = sum32;
+            exports.sum32 = sum32;
             function sum32_3(a, b, c) {
                 return a + b + c >>> 0;
             }
-            utils.sum32_3 = sum32_3;
+            exports.sum32_3 = sum32_3;
             function sum32_4(a, b, c, d) {
                 return a + b + c + d >>> 0;
             }
-            utils.sum32_4 = sum32_4;
+            exports.sum32_4 = sum32_4;
             function sum32_5(a, b, c, d, e) {
                 return a + b + c + d + e >>> 0;
             }
-            utils.sum32_5 = sum32_5;
-            function assert(cond, msg) {
-                if (!cond) throw new Error(msg || "Assertion failed");
-            }
-            utils.assert = assert;
-            utils.inherits = inherits;
+            exports.sum32_5 = sum32_5;
             function sum64(buf, pos, ah, al) {
                 var bh = buf[pos];
                 var bl = buf[pos + 1];
@@ -11581,9 +11689,33 @@
             }
             exports.shr64_lo = shr64_lo;
         }, {
-            inherits: 94
+            inherits: 97,
+            "minimalistic-assert": 105
         } ],
-        91: [ function(require, module, exports) {
+        97: [ function(require, module, exports) {
+            if (typeof Object.create === "function") {
+                module.exports = function inherits(ctor, superCtor) {
+                    ctor.super_ = superCtor;
+                    ctor.prototype = Object.create(superCtor.prototype, {
+                        constructor: {
+                            value: ctor,
+                            enumerable: false,
+                            writable: true,
+                            configurable: true
+                        }
+                    });
+                };
+            } else {
+                module.exports = function inherits(ctor, superCtor) {
+                    ctor.super_ = superCtor;
+                    var TempCtor = function() {};
+                    TempCtor.prototype = superCtor.prototype;
+                    ctor.prototype = new TempCtor();
+                    ctor.prototype.constructor = ctor;
+                };
+            }
+        }, {} ],
+        98: [ function(require, module, exports) {
             "use strict";
             var hash = require("hash.js");
             var utils = require("minimalistic-crypto-utils");
@@ -11664,10 +11796,10 @@
             };
         }, {
             "hash.js": 85,
-            "minimalistic-assert": 98,
-            "minimalistic-crypto-utils": 99
+            "minimalistic-assert": 105,
+            "minimalistic-crypto-utils": 106
         } ],
-        92: [ function(require, module, exports) {
+        99: [ function(require, module, exports) {
             exports.read = function(buffer, offset, isLE, mLen, nBytes) {
                 var e, m;
                 var eLen = nBytes * 8 - mLen - 1;
@@ -11742,7 +11874,7 @@
                 buffer[offset + i - d] |= s * 128;
             };
         }, {} ],
-        93: [ function(require, module, exports) {
+        100: [ function(require, module, exports) {
             var indexOf = [].indexOf;
             module.exports = function(arr, obj) {
                 if (indexOf) return arr.indexOf(obj);
@@ -11752,30 +11884,12 @@
                 return -1;
             };
         }, {} ],
-        94: [ function(require, module, exports) {
-            if (typeof Object.create === "function") {
-                module.exports = function inherits(ctor, superCtor) {
-                    ctor.super_ = superCtor;
-                    ctor.prototype = Object.create(superCtor.prototype, {
-                        constructor: {
-                            value: ctor,
-                            enumerable: false,
-                            writable: true,
-                            configurable: true
-                        }
-                    });
-                };
-            } else {
-                module.exports = function inherits(ctor, superCtor) {
-                    ctor.super_ = superCtor;
-                    var TempCtor = function() {};
-                    TempCtor.prototype = superCtor.prototype;
-                    ctor.prototype = new TempCtor();
-                    ctor.prototype.constructor = ctor;
-                };
-            }
-        }, {} ],
-        95: [ function(require, module, exports) {
+        101: [ function(require, module, exports) {
+            arguments[4][97][0].apply(exports, arguments);
+        }, {
+            dup: 97
+        } ],
+        102: [ function(require, module, exports) {
             module.exports = function(obj) {
                 return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer);
             };
@@ -11786,12 +11900,12 @@
                 return typeof obj.readFloatLE === "function" && typeof obj.slice === "function" && isBuffer(obj.slice(0, 0));
             }
         }, {} ],
-        96: [ function(require, module, exports) {
+        103: [ function(require, module, exports) {
             module.exports = Array.isArray || function(arr) {
                 return Object.prototype.toString.call(arr) == "[object Array]";
             };
         }, {} ],
-        97: [ function(require, module, exports) {
+        104: [ function(require, module, exports) {
             var bn = require("bn.js");
             var brorand = require("brorand");
             function MillerRabin(rand) {
@@ -11866,7 +11980,7 @@
             "bn.js": 16,
             brorand: 17
         } ],
-        98: [ function(require, module, exports) {
+        105: [ function(require, module, exports) {
             module.exports = assert;
             function assert(val, msg) {
                 if (!val) throw new Error(msg || "Assertion failed");
@@ -11875,7 +11989,7 @@
                 if (l != r) throw new Error(msg || "Assertion failed: " + l + " != " + r);
             };
         }, {} ],
-        99: [ function(require, module, exports) {
+        106: [ function(require, module, exports) {
             "use strict";
             var utils = exports;
             function toArray(msg, enc) {
@@ -11915,7 +12029,7 @@
                 if (enc === "hex") return toHex(arr); else return arr;
             };
         }, {} ],
-        100: [ function(require, module, exports) {
+        107: [ function(require, module, exports) {
             module.exports = {
                 "2.16.840.1.101.3.4.1.1": "aes-128-ecb",
                 "2.16.840.1.101.3.4.1.2": "aes-128-cbc",
@@ -11931,7 +12045,7 @@
                 "2.16.840.1.101.3.4.1.44": "aes-256-cfb"
             };
         }, {} ],
-        101: [ function(require, module, exports) {
+        108: [ function(require, module, exports) {
             "use strict";
             var asn1 = require("asn1.js");
             exports.certificate = require("./certificate");
@@ -11978,10 +12092,10 @@
                 this.seq().obj(this.key("r").int(), this.key("s").int());
             });
         }, {
-            "./certificate": 102,
+            "./certificate": 109,
             "asn1.js": 1
         } ],
-        102: [ function(require, module, exports) {
+        109: [ function(require, module, exports) {
             "use strict";
             var asn = require("asn1.js");
             var Time = asn.define("Time", function() {
@@ -12026,7 +12140,7 @@
         }, {
             "asn1.js": 1
         } ],
-        103: [ function(require, module, exports) {
+        110: [ function(require, module, exports) {
             (function(Buffer) {
                 var findProc = /Proc-Type: 4,ENCRYPTED\n\r?DEK-Info: AES-((?:128)|(?:192)|(?:256))-CBC,([0-9A-H]+)\n\r?\n\r?([0-9A-z\n\r\+\/\=]+)\n\r?/m;
                 var startRegex = /^-----BEGIN ((?:.* KEY)|CERTIFICATE)-----\n/m;
@@ -12063,7 +12177,7 @@
             buffer: 45,
             evp_bytestokey: 83
         } ],
-        104: [ function(require, module, exports) {
+        111: [ function(require, module, exports) {
             (function(Buffer) {
                 var asn1 = require("./asn1");
                 var aesid = require("./aesid.json");
@@ -12185,21 +12299,21 @@
                 }
             }).call(this, require("buffer").Buffer);
         }, {
-            "./aesid.json": 100,
-            "./asn1": 101,
-            "./fixProc": 103,
+            "./aesid.json": 107,
+            "./asn1": 108,
+            "./fixProc": 110,
             "browserify-aes": 21,
             buffer: 45,
-            pbkdf2: 105
+            pbkdf2: 112
         } ],
-        105: [ function(require, module, exports) {
+        112: [ function(require, module, exports) {
             exports.pbkdf2 = require("./lib/async");
             exports.pbkdf2Sync = require("./lib/sync");
         }, {
-            "./lib/async": 106,
-            "./lib/sync": 109
+            "./lib/async": 113,
+            "./lib/sync": 116
         } ],
-        106: [ function(require, module, exports) {
+        113: [ function(require, module, exports) {
             (function(process, global) {
                 var checkParameters = require("./precondition");
                 var defaultEncoding = require("./default-encoding");
@@ -12297,13 +12411,13 @@
                 };
             }).call(this, require("_process"), typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {});
         }, {
-            "./default-encoding": 107,
-            "./precondition": 108,
-            "./sync": 109,
-            _process: 110,
-            "safe-buffer": 129
+            "./default-encoding": 114,
+            "./precondition": 115,
+            "./sync": 116,
+            _process: 117,
+            "safe-buffer": 136
         } ],
-        107: [ function(require, module, exports) {
+        114: [ function(require, module, exports) {
             (function(process) {
                 var defaultEncoding;
                 if (process.browser) {
@@ -12315,9 +12429,9 @@
                 module.exports = defaultEncoding;
             }).call(this, require("_process"));
         }, {
-            _process: 110
+            _process: 117
         } ],
-        108: [ function(require, module, exports) {
+        115: [ function(require, module, exports) {
             var MAX_ALLOC = Math.pow(2, 30) - 1;
             module.exports = function(iterations, keylen) {
                 if (typeof iterations !== "number") {
@@ -12334,7 +12448,7 @@
                 }
             };
         }, {} ],
-        109: [ function(require, module, exports) {
+        116: [ function(require, module, exports) {
             var md5 = require("create-hash/md5");
             var rmd160 = require("ripemd160");
             var sha = require("sha.js");
@@ -12383,14 +12497,14 @@
                 return this.hash(this.opad);
             };
             function getDigest(alg) {
-                if (alg === "rmd160" || alg === "ripemd160") return rmd160;
-                if (alg === "md5") return md5;
-                return shaFunc;
                 function shaFunc(data) {
                     return sha(alg).update(data).digest();
                 }
+                if (alg === "rmd160" || alg === "ripemd160") return rmd160;
+                if (alg === "md5") return md5;
+                return shaFunc;
             }
-            module.exports = function(password, salt, iterations, keylen, digest) {
+            function pbkdf2(password, salt, iterations, keylen, digest) {
                 if (!Buffer.isBuffer(password)) password = Buffer.from(password, defaultEncoding);
                 if (!Buffer.isBuffer(salt)) salt = Buffer.from(salt, defaultEncoding);
                 checkParameters(iterations, keylen);
@@ -12399,34 +12513,32 @@
                 var DK = Buffer.allocUnsafe(keylen);
                 var block1 = Buffer.allocUnsafe(salt.length + 4);
                 salt.copy(block1, 0, 0, salt.length);
-                var U, j, destPos, len;
-                var hLen = hmac.size;
-                var T = Buffer.allocUnsafe(hLen);
+                var destPos = 0;
+                var hLen = sizes[digest];
                 var l = Math.ceil(keylen / hLen);
-                var r = keylen - (l - 1) * hLen;
                 for (var i = 1; i <= l; i++) {
                     block1.writeUInt32BE(i, salt.length);
-                    U = hmac.run(block1, hmac.ipad1);
-                    U.copy(T, 0, 0, hLen);
-                    for (j = 1; j < iterations; j++) {
+                    var T = hmac.run(block1, hmac.ipad1);
+                    var U = T;
+                    for (var j = 1; j < iterations; j++) {
                         U = hmac.run(U, hmac.ipad2);
                         for (var k = 0; k < hLen; k++) T[k] ^= U[k];
                     }
-                    destPos = (i - 1) * hLen;
-                    len = i === l ? r : hLen;
-                    T.copy(DK, destPos, 0, len);
+                    T.copy(DK, destPos);
+                    destPos += hLen;
                 }
                 return DK;
-            };
+            }
+            module.exports = pbkdf2;
         }, {
-            "./default-encoding": 107,
-            "./precondition": 108,
+            "./default-encoding": 114,
+            "./precondition": 115,
             "create-hash/md5": 52,
-            ripemd160: 128,
-            "safe-buffer": 129,
-            "sha.js": 131
+            ripemd160: 135,
+            "safe-buffer": 136,
+            "sha.js": 138
         } ],
-        110: [ function(require, module, exports) {
+        117: [ function(require, module, exports) {
             var process = module.exports = {};
             var cachedSetTimeout;
             var cachedClearTimeout;
@@ -12583,7 +12695,7 @@
                 return 0;
             };
         }, {} ],
-        111: [ function(require, module, exports) {
+        118: [ function(require, module, exports) {
             exports.publicEncrypt = require("./publicEncrypt");
             exports.privateDecrypt = require("./privateDecrypt");
             exports.privateEncrypt = function privateEncrypt(key, buf) {
@@ -12593,10 +12705,10 @@
                 return exports.privateDecrypt(key, buf, true);
             };
         }, {
-            "./privateDecrypt": 113,
-            "./publicEncrypt": 114
+            "./privateDecrypt": 120,
+            "./publicEncrypt": 121
         } ],
-        112: [ function(require, module, exports) {
+        119: [ function(require, module, exports) {
             (function(Buffer) {
                 var createHash = require("create-hash");
                 module.exports = function(seed, len) {
@@ -12618,7 +12730,7 @@
             buffer: 45,
             "create-hash": 50
         } ],
-        113: [ function(require, module, exports) {
+        120: [ function(require, module, exports) {
             (function(Buffer) {
                 var parseKeys = require("parse-asn1");
                 var mgf = require("./mgf");
@@ -12726,16 +12838,16 @@
                 }
             }).call(this, require("buffer").Buffer);
         }, {
-            "./mgf": 112,
-            "./withPublic": 115,
-            "./xor": 116,
+            "./mgf": 119,
+            "./withPublic": 122,
+            "./xor": 123,
             "bn.js": 16,
             "browserify-rsa": 37,
             buffer: 45,
             "create-hash": 50,
-            "parse-asn1": 104
+            "parse-asn1": 111
         } ],
-        114: [ function(require, module, exports) {
+        121: [ function(require, module, exports) {
             (function(Buffer) {
                 var parseKeys = require("parse-asn1");
                 var randomBytes = require("randombytes");
@@ -12831,17 +12943,17 @@
                 }
             }).call(this, require("buffer").Buffer);
         }, {
-            "./mgf": 112,
-            "./withPublic": 115,
-            "./xor": 116,
+            "./mgf": 119,
+            "./withPublic": 122,
+            "./xor": 123,
             "bn.js": 16,
             "browserify-rsa": 37,
             buffer: 45,
             "create-hash": 50,
-            "parse-asn1": 104,
-            randombytes: 117
+            "parse-asn1": 111,
+            randombytes: 124
         } ],
-        115: [ function(require, module, exports) {
+        122: [ function(require, module, exports) {
             (function(Buffer) {
                 var bn = require("bn.js");
                 function withPublic(paddedMsg, key) {
@@ -12853,7 +12965,7 @@
             "bn.js": 16,
             buffer: 45
         } ],
-        116: [ function(require, module, exports) {
+        123: [ function(require, module, exports) {
             module.exports = function xor(a, b) {
                 var len = a.length;
                 var i = -1;
@@ -12863,7 +12975,7 @@
                 return a;
             };
         }, {} ],
-        117: [ function(require, module, exports) {
+        124: [ function(require, module, exports) {
             (function(process, global) {
                 "use strict";
                 function oldBrowser() {
@@ -12892,15 +13004,15 @@
                 }
             }).call(this, require("_process"), typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {});
         }, {
-            _process: 110,
-            "safe-buffer": 129
+            _process: 117,
+            "safe-buffer": 136
         } ],
-        118: [ function(require, module, exports) {
+        125: [ function(require, module, exports) {
             module.exports = require("./lib/_stream_duplex.js");
         }, {
-            "./lib/_stream_duplex.js": 119
+            "./lib/_stream_duplex.js": 126
         } ],
-        119: [ function(require, module, exports) {
+        126: [ function(require, module, exports) {
             (function(process) {
                 module.exports = Duplex;
                 var objectKeys = Object.keys || function(obj) {
@@ -12937,13 +13049,13 @@
                 }
             }).call(this, require("_process"));
         }, {
-            "./_stream_readable": 121,
-            "./_stream_writable": 123,
-            _process: 110,
+            "./_stream_readable": 128,
+            "./_stream_writable": 130,
+            _process: 117,
             "core-util-is": 48,
-            inherits: 94
+            inherits: 101
         } ],
-        120: [ function(require, module, exports) {
+        127: [ function(require, module, exports) {
             module.exports = PassThrough;
             var Transform = require("./_stream_transform");
             var util = require("core-util-is");
@@ -12957,11 +13069,11 @@
                 cb(null, chunk);
             };
         }, {
-            "./_stream_transform": 122,
+            "./_stream_transform": 129,
             "core-util-is": 48,
-            inherits: 94
+            inherits: 101
         } ],
-        121: [ function(require, module, exports) {
+        128: [ function(require, module, exports) {
             (function(process) {
                 module.exports = Readable;
                 var isArray = require("isarray");
@@ -13503,18 +13615,18 @@
                 }
             }).call(this, require("_process"));
         }, {
-            "./_stream_duplex": 119,
-            _process: 110,
+            "./_stream_duplex": 126,
+            _process: 117,
             buffer: 45,
             "core-util-is": 48,
             events: 82,
-            inherits: 94,
-            isarray: 96,
-            stream: 138,
-            "string_decoder/": 139,
+            inherits: 101,
+            isarray: 103,
+            stream: 145,
+            "string_decoder/": 146,
             util: 18
         } ],
-        122: [ function(require, module, exports) {
+        129: [ function(require, module, exports) {
             module.exports = Transform;
             var Duplex = require("./_stream_duplex");
             var util = require("core-util-is");
@@ -13592,11 +13704,11 @@
                 return stream.push(null);
             }
         }, {
-            "./_stream_duplex": 119,
+            "./_stream_duplex": 126,
             "core-util-is": 48,
-            inherits: 94
+            inherits: 101
         } ],
-        123: [ function(require, module, exports) {
+        130: [ function(require, module, exports) {
             (function(process) {
                 module.exports = Writable;
                 var Buffer = require("buffer").Buffer;
@@ -13849,19 +13961,19 @@
                 }
             }).call(this, require("_process"));
         }, {
-            "./_stream_duplex": 119,
-            _process: 110,
+            "./_stream_duplex": 126,
+            _process: 117,
             buffer: 45,
             "core-util-is": 48,
-            inherits: 94,
-            stream: 138
+            inherits: 101,
+            stream: 145
         } ],
-        124: [ function(require, module, exports) {
+        131: [ function(require, module, exports) {
             module.exports = require("./lib/_stream_passthrough.js");
         }, {
-            "./lib/_stream_passthrough.js": 120
+            "./lib/_stream_passthrough.js": 127
         } ],
-        125: [ function(require, module, exports) {
+        132: [ function(require, module, exports) {
             (function(process) {
                 exports = module.exports = require("./lib/_stream_readable.js");
                 exports.Stream = require("stream");
@@ -13875,25 +13987,25 @@
                 }
             }).call(this, require("_process"));
         }, {
-            "./lib/_stream_duplex.js": 119,
-            "./lib/_stream_passthrough.js": 120,
-            "./lib/_stream_readable.js": 121,
-            "./lib/_stream_transform.js": 122,
-            "./lib/_stream_writable.js": 123,
-            _process: 110,
-            stream: 138
+            "./lib/_stream_duplex.js": 126,
+            "./lib/_stream_passthrough.js": 127,
+            "./lib/_stream_readable.js": 128,
+            "./lib/_stream_transform.js": 129,
+            "./lib/_stream_writable.js": 130,
+            _process: 117,
+            stream: 145
         } ],
-        126: [ function(require, module, exports) {
+        133: [ function(require, module, exports) {
             module.exports = require("./lib/_stream_transform.js");
         }, {
-            "./lib/_stream_transform.js": 122
+            "./lib/_stream_transform.js": 129
         } ],
-        127: [ function(require, module, exports) {
+        134: [ function(require, module, exports) {
             module.exports = require("./lib/_stream_writable.js");
         }, {
-            "./lib/_stream_writable.js": 123
+            "./lib/_stream_writable.js": 130
         } ],
-        128: [ function(require, module, exports) {
+        135: [ function(require, module, exports) {
             (function(Buffer) {
                 "use strict";
                 var inherits = require("inherits");
@@ -14289,25 +14401,26 @@
         }, {
             buffer: 45,
             "hash-base": 84,
-            inherits: 94
+            inherits: 101
         } ],
-        129: [ function(require, module, exports) {
+        136: [ function(require, module, exports) {
             var buffer = require("buffer");
             var Buffer = buffer.Buffer;
+            function copyProps(src, dst) {
+                for (var key in src) {
+                    dst[key] = src[key];
+                }
+            }
             if (Buffer.from && Buffer.alloc && Buffer.allocUnsafe && Buffer.allocUnsafeSlow) {
                 module.exports = buffer;
             } else {
-                Object.keys(buffer).forEach(function(prop) {
-                    exports[prop] = buffer[prop];
-                });
+                copyProps(buffer, exports);
                 exports.Buffer = SafeBuffer;
             }
             function SafeBuffer(arg, encodingOrOffset, length) {
                 return Buffer(arg, encodingOrOffset, length);
             }
-            Object.keys(Buffer).forEach(function(prop) {
-                SafeBuffer[prop] = Buffer[prop];
-            });
+            copyProps(Buffer, SafeBuffer);
             SafeBuffer.from = function(arg, encodingOrOffset, length) {
                 if (typeof arg === "number") {
                     throw new TypeError("Argument must not be a number");
@@ -14345,7 +14458,7 @@
         }, {
             buffer: 45
         } ],
-        130: [ function(require, module, exports) {
+        137: [ function(require, module, exports) {
             (function(Buffer) {
                 function Hash(blockSize, finalSize) {
                     this._block = new Buffer(blockSize);
@@ -14398,7 +14511,7 @@
         }, {
             buffer: 45
         } ],
-        131: [ function(require, module, exports) {
+        138: [ function(require, module, exports) {
             var exports = module.exports = function SHA(algorithm) {
                 algorithm = algorithm.toLowerCase();
                 var Algorithm = exports[algorithm];
@@ -14412,14 +14525,14 @@
             exports.sha384 = require("./sha384");
             exports.sha512 = require("./sha512");
         }, {
-            "./sha": 132,
-            "./sha1": 133,
-            "./sha224": 134,
-            "./sha256": 135,
-            "./sha384": 136,
-            "./sha512": 137
+            "./sha": 139,
+            "./sha1": 140,
+            "./sha224": 141,
+            "./sha256": 142,
+            "./sha384": 143,
+            "./sha512": 144
         } ],
-        132: [ function(require, module, exports) {
+        139: [ function(require, module, exports) {
             (function(Buffer) {
                 var inherits = require("inherits");
                 var Hash = require("./hash");
@@ -14486,11 +14599,11 @@
                 module.exports = Sha;
             }).call(this, require("buffer").Buffer);
         }, {
-            "./hash": 130,
+            "./hash": 137,
             buffer: 45,
-            inherits: 94
+            inherits: 101
         } ],
-        133: [ function(require, module, exports) {
+        140: [ function(require, module, exports) {
             (function(Buffer) {
                 var inherits = require("inherits");
                 var Hash = require("./hash");
@@ -14560,11 +14673,11 @@
                 module.exports = Sha1;
             }).call(this, require("buffer").Buffer);
         }, {
-            "./hash": 130,
+            "./hash": 137,
             buffer: 45,
-            inherits: 94
+            inherits: 101
         } ],
-        134: [ function(require, module, exports) {
+        141: [ function(require, module, exports) {
             (function(Buffer) {
                 var inherits = require("inherits");
                 var Sha256 = require("./sha256");
@@ -14601,12 +14714,12 @@
                 module.exports = Sha224;
             }).call(this, require("buffer").Buffer);
         }, {
-            "./hash": 130,
-            "./sha256": 135,
+            "./hash": 137,
+            "./sha256": 142,
             buffer: 45,
-            inherits: 94
+            inherits: 101
         } ],
-        135: [ function(require, module, exports) {
+        142: [ function(require, module, exports) {
             (function(Buffer) {
                 var inherits = require("inherits");
                 var Hash = require("./hash");
@@ -14695,11 +14808,11 @@
                 module.exports = Sha256;
             }).call(this, require("buffer").Buffer);
         }, {
-            "./hash": 130,
+            "./hash": 137,
             buffer: 45,
-            inherits: 94
+            inherits: 101
         } ],
-        136: [ function(require, module, exports) {
+        143: [ function(require, module, exports) {
             (function(Buffer) {
                 var inherits = require("inherits");
                 var SHA512 = require("./sha512");
@@ -14747,12 +14860,12 @@
                 module.exports = Sha384;
             }).call(this, require("buffer").Buffer);
         }, {
-            "./hash": 130,
-            "./sha512": 137,
+            "./hash": 137,
+            "./sha512": 144,
             buffer: 45,
-            inherits: 94
+            inherits: 101
         } ],
-        137: [ function(require, module, exports) {
+        144: [ function(require, module, exports) {
             (function(Buffer) {
                 var inherits = require("inherits");
                 var Hash = require("./hash");
@@ -14930,11 +15043,11 @@
                 module.exports = Sha512;
             }).call(this, require("buffer").Buffer);
         }, {
-            "./hash": 130,
+            "./hash": 137,
             buffer: 45,
-            inherits: 94
+            inherits: 101
         } ],
-        138: [ function(require, module, exports) {
+        145: [ function(require, module, exports) {
             module.exports = Stream;
             var EE = require("events").EventEmitter;
             var inherits = require("inherits");
@@ -15006,14 +15119,14 @@
             };
         }, {
             events: 82,
-            inherits: 94,
-            "readable-stream/duplex.js": 118,
-            "readable-stream/passthrough.js": 124,
-            "readable-stream/readable.js": 125,
-            "readable-stream/transform.js": 126,
-            "readable-stream/writable.js": 127
+            inherits: 101,
+            "readable-stream/duplex.js": 125,
+            "readable-stream/passthrough.js": 131,
+            "readable-stream/readable.js": 132,
+            "readable-stream/transform.js": 133,
+            "readable-stream/writable.js": 134
         } ],
-        139: [ function(require, module, exports) {
+        146: [ function(require, module, exports) {
             var Buffer = require("buffer").Buffer;
             var isBufferEncoding = Buffer.isEncoding || function(encoding) {
                 switch (encoding && encoding.toLowerCase()) {
@@ -15152,7 +15265,7 @@
         }, {
             buffer: 45
         } ],
-        140: [ function(require, module, exports) {
+        147: [ function(require, module, exports) {
             var indexOf = require("indexof");
             var Object_keys = function(obj) {
                 if (Object.keys) return Object.keys(obj); else {
@@ -15257,12 +15370,12 @@
                 return copy;
             };
         }, {
-            indexof: 93
+            indexof: 100
         } ],
-        141: [ function(require, module, exports) {
+        148: [ function(require, module, exports) {
             angular.module("angular-elliptic", [ "olitvin.elliptic", "olitvin.crypto" ]);
         }, {} ],
-        142: [ function(require, module, exports) {
+        149: [ function(require, module, exports) {
             (function(Buffer) {
                 "use strict";
                 var Crypto = require("crypto");
@@ -15288,7 +15401,7 @@
             buffer: 45,
             crypto: 55
         } ],
-        143: [ function(require, module, exports) {
+        150: [ function(require, module, exports) {
             "use strict";
             var Elliptic = require("elliptic");
             angular.module("olitvin.elliptic", []).factory("elliptic", function() {
@@ -15297,5 +15410,5 @@
         }, {
             elliptic: 66
         } ]
-    }, {}, [ 141, 142, 143 ]);
+    }, {}, [ 148, 149, 150 ]);
 })(this, this.angular, this.Math, void 0);
